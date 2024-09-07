@@ -1,0 +1,39 @@
+/**Map**/
+.Diagram-Zoo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.Diagram {
+    max-width: 1200px; /* กำหนดความกว้างสูงสุดของ Diagram */
+    width: 90%; /* กำหนดความกว้างที่ตอบสนอง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#responsive-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* สไตล์สำหรับหน้าจอมือถือ */
+@media (max-width: 768px) {
+    .Diagram-Zoo {
+        padding: 10px;
+    }
+
+    .Diagram {
+        padding: 10px;
+    }
+
+    #responsive-image {
+        transform-origin: center;
+        touch-action: manipulation; /* ป้องกันการเลื่อนหน้าจอเมื่อซูม */
+    }
+}
