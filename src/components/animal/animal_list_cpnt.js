@@ -2,9 +2,32 @@ import React, { Component } from 'react';
 
 import './animal_list_cpnt.css'
 
-import AnimalImg from '../../imges/animals/68943.jpg'
+import Img1 from '../../imges/animals/68943.jpg'
+import Img2 from '../../imges/animals/68945.jpg'
+import Img3 from '../../imges/animals/68949.jpg'
 
 class AnimalList extends Component {
+    constructor() {
+        super()
+        this.state = {
+            data: [{
+                id: 1,
+                animalName: "Name1",
+                animalImage: Img1
+            },{
+                id: 2,
+                animalName: "Name2",
+                animalImage: Img2
+            },{
+                id: 3,
+                animalName: "Name3",
+                animalImage: Img3
+            }]
+        }
+    }
+    
+    // Get api zone
+
     render() {
         return (
             <div class="container-xxl py-5">
@@ -18,18 +41,20 @@ class AnimalList extends Component {
                         </div>
                     </div>
 
-                    <div class="row g-4">
-                        <div class="col-md-4 col-12 wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="animal-item" href={null /* /:animalName */} data-lightbox="animal">
-                                <div class="position-relative">
-                                    <img class="img-fluid" src={AnimalImg} alt />
-                                    <div class="animal-text p-4">
-                                        <p class="text-white small text-uppercase mb-0">Animal</p>
-                                        <h5 class="text-white mb-0">Animal Name</h5>
+                    <div className="row g-4">
+                        {this.state.data.map((animal) => (
+                            <div className="col-md-4 col-12 wow fadeInUp" data-wow-delay="0.1s" key={animal.id}>
+                                <a className="animal-item" href={`/animals/${animal.animalName}`} data-lightbox="animal">
+                                    <div className="position-relative">
+                                        <img className="img-fluid" src={animal.animalImage} alt={animal.animalName} />
+                                        <div className="animal-text p-4">
+                                            <p className="text-white small text-uppercase mb-0">Animal</p>
+                                            <h5 className="text-white mb-0">{animal.animalName}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

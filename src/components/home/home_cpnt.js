@@ -4,7 +4,6 @@ import Header from '../header/header_cpnt'
 import AnimalList from '../animal/animal_list_cpnt';
 import About from '../about/about_cpnt';
 
-
 import Imge1 from '../../imges/animals/68949.jpg'
 import Imge2 from '../../imges/animals/68946.jpg'
 import Imge3 from '../../imges/animals/68947.jpg'
@@ -14,7 +13,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Header />
+                {/* <Header />
                 <div class="modal modal-video fade" id="videoModal" tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
@@ -36,7 +35,7 @@ class Home extends Component {
                     </div>
                 </div>
                 <AnimalList />
-                <About />
+                <About /> */}
             </div>
         );
     }
